@@ -14,12 +14,9 @@ spec:
       labels:
         app: mysql
     spec:
-      initContainers:
-      # По желанию: здесь часто меняют права на директорию /var/lib/mysql,
-      # но для базового задания достаточно сразу описать контейнер mysql
       containers:
       - name: mysql
-        image: mysql:8.0 # или mysql:5.7, в зависимости от требований приложения
+        image: mysql:8.0
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
